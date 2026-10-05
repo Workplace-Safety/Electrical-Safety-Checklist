@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electrical Safety Checklist</title>
+
+<!-- PDF export library (only needed for the Download PDF button) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.14.0/html2pdf.bundle.min.js"></script>
+<!-- Real .docx (Word) export library (only needed for the Download Word button) -->
+<script src="https://cdn.jsdelivr.net/npm/html-docx-js@0.3.1/dist/html-docx.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- STICKY TOOLBAR (stays visible while scrolling) -->
+<div class="toolbar">
+    <span class="toolbar-title">Electrical Safety Checklist</span>
+    <button class="btn btn-pdf" id="downloadPdfBtn" type="button">⬇ Download PDF</button>
+    <button class="btn btn-word" id="downloadWordBtn" type="button">⬇ Download Word</button>
+    <button class="btn btn-reset" type="reset" form="printable">↺ Reset Form</button>
+</div>
+
+<!-- PRINTABLE / EXPORTABLE FORM -->
+<form id="printable">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Electrical Safety Checklist</h1>
+        <div class="header-info">
+            <div class="info-field">
+                <span class="info-label">Site/Project Name:</span>
+                <input type="text" class="info-input" />
+            </div>
+            <div class="info-field">
+                <span class="info-label">Inspection Date:</span>
+                <input type="date" class="info-input" />
+            </div>
+            <div class="info-field">
+                <span class="info-label">Area/Location:</span>
+                <input type="text" class="info-input" />
+            </div>
+            <div class="info-field">
+                <span class="info-label">Inspector Name:</span>
+                <input type="text" class="info-input" />
+            </div>
+        </div>
+    </div>
+
+    <!-- INFO BOX -->
+    <div class="info-box">
+        <div class="info-text">
+            <strong>OSHA Requirement (29 CFR 1926.404):</strong> All electrical installations and equipment must be approved, properly installed, and maintained. GFCI protection required for temporary power. Regular inspections prevent electrical hazards.
+        </div>
+    </div>
+
+    <!-- STATUS SUMMARY -->
+    <div class="status-summary">
+        <label class="status-item">
+            <span class="radio-wrap-large">
+                <input type="radio" name="overall-status" value="Compliant" class="radio-hidden" />
+                <span class="radio-box-large"></span>
+            </span>
+            <span class="checkbox-label">COMPLIANT - No Issues</span>
+        </label>
+        <label class="status-item">
+            <span class="radio-wrap-large">
+                <input type="radio" name="overall-status" value="Corrections Needed" class="radio-hidden" />
+                <span class="radio-box-large"></span>
+            </span>
+            <span class="checkbox-label">Corrections Needed</span>
+        </label>
+        <label class="status-item">
+            <span class="radio-wrap-large">
+                <input type="radio" name="overall-status" value="Hazard - Stop Work" class="radio-hidden" />
+                <span class="radio-box-large"></span>
+            </span>
+            <span class="checkbox-label">Hazard - Stop Work</span>
+        </label>
+    </div>
+
+    <h2>1. GFCI Protection &amp; Temporary Power</h2>
+    <div class="checklist-section">
+        <div class="checklist-item">
+            <div class="item-text">All 120V temporary power receptacles protected by GFCI</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-1" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-1" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-1" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">GFCIs tested monthly (test button pushed, trips properly)</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-2" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-2" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-2" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Temporary wiring properly supported and protected from damage</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-3" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-3" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-3" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Power distribution boxes/spider boxes in good condition</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-4" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-4" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-4" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+    </div>
+
+    <h2>2. Extension Cords &amp; Power Tools</h2>
+    <div class="checklist-section">
+        <div class="checklist-item">
+            <div class="item-text">Extension cords rated for hard/extra-hard usage (no household cords)</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-5" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-5" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-5" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">No damaged, cut, or spliced extension cords in use</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-6" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-6" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-6" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Extension cords have grounding pin (3-prong plugs intact)</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-7" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-7" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-7" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Power tools double-insulated or properly grounded</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-8" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-8" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-8" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">No cords run through doorways, walls, or across walkways (trip hazard)</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-9" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-9" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-9" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+    </div>
+
+    <h2>3. Electrical Panels &amp; Installations</h2>
+    <div class="checklist-section">
+        <div class="checklist-item">
+            <div class="item-text">Electrical panels accessible (min. 3 ft clearance, not blocked)</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-10" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-10" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-10" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Panel covers/doors in place, no exposed energized parts</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-11" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-11" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-11" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Circuit breakers/fuses properly labeled</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-12" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-12" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-12" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">No unauthorized modifications or bypassed safety devices</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-13" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-13" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-13" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+    </div>
+
+    <h2>4. Lock-Out/Tag-Out (LOTO) Compliance</h2>
+    <div class="checklist-section">
+        <div class="checklist-item">
+            <div class="item-text">LOTO procedures established for equipment maintenance</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-14" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-14" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-14" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Locks, tags, and LOTO devices available and in use</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-15" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-15" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-15" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Workers trained on LOTO procedures</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-16" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-16" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-16" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+    </div>
+
+    <h2>5. Overhead Power Lines &amp; Clearances</h2>
+    <div class="checklist-section">
+        <div class="checklist-item">
+            <div class="item-text">Overhead power lines identified and marked</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-17" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-17" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-17" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Minimum clearance maintained (10 ft for up to 50kV lines)</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-18" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-18" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-18" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Equipment operators aware of power line locations</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-19" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-19" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-19" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALERT BOX -->
+    <div class="alert-box">
+        <div class="alert-text">⚠ ELECTRICAL SHOCK CAN BE FATAL: Never work on energized circuits. De-energize, lock-out, tag-out, and test before work. Contact licensed electrician for repairs.</div>
+    </div>
+
+    <!-- OBSERVATIONS & NOTES -->
+    <div class="notes-section">
+        <h3>Hazards Identified &amp; Corrective Actions</h3>
+        <textarea class="notes-area" placeholder="Document any electrical hazards, equipment removed from service, or corrective actions taken..."></textarea>
+    </div>
+
+    <!-- SIGNATURE SECTION -->
+    <div class="signature-section">
+        <div class="signature-box">
+            <span class="signature-label">Inspector Signature:</span>
+            <div class="signature-line"></div>
+            <div class="info-field" style="margin-top: 12pt;">
+                <span class="info-label">Print Name:</span>
+                <input type="text" class="info-input" />
+            </div>
+            <div class="info-field">
+                <span class="info-label">Date:</span>
+                <input type="date" class="info-input" />
+            </div>
+        </div>
+        <div class="signature-box">
+            <span class="signature-label">Competent Person/Electrician Review:</span>
+            <div class="signature-line"></div>
+            <div class="info-field" style="margin-top: 12pt;">
+                <span class="info-label">Print Name:</span>
+                <input type="text" class="info-input" />
+            </div>
+            <div class="info-field">
+                <span class="info-label">Date:</span>
+                <input type="date" class="info-input" />
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-grid">
+            <div>Page 1 of 1</div>
+            <div>Electrical Safety Checklist</div>
+            <div>Version 1.0 - 2026</div>
+        </div>
+        <div style="margin-top: 8pt; font-size: 7pt;">
+            Aligned with OSHA 29 CFR 1926.404 - Electrical (Wiring Design and Protection). Regular inspections prevent electrical hazards. Only qualified electricians should perform electrical work. This form is a documentation tool - verify current OSHA requirements at www.osha.gov.
+        </div>
+    </div>
+
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>
